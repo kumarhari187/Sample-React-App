@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Counter from "./Counter";
+
+export const ButtonColorContext = React.createContext()
 
 function App() {
+  const [buttonColor, setButtonColor] = useState('black')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ButtonColorContext.Provider value={{ backgroundColor: buttonColor }}>
+      <button onClick={() => setButtonColor(prevButtonColor => prevButtonColor === 'gray' ? 'white' : 'gray')}>Toggle Button Color</button>
+      <br />
+      <br />
+      <Counter initialCount={0}/>
+    </ButtonColorContext.Provider>
   );
 }
 
