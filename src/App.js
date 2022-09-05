@@ -4,7 +4,7 @@ import Counter from "./Counter";
 export const ButtonColorContext = React.createContext()
 
 function App() {
-  const [buttonColor, setButtonColor] = useState('black')
+  const [buttonColor, setButtonColor] = useState('yellow')
   return (
     <ButtonColorContext.Provider value={{ backgroundColor: buttonColor }}>
       <button onClick={() => setButtonColor(prevButtonColor => prevButtonColor === 'gray' ? 'white' : 'gray')}>Toggle Button Color</button>

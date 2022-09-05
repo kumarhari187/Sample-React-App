@@ -7,9 +7,9 @@ export default function Counter ({ initialCount }) {
     return (
         <>
         <div>
-            <button style={buttonColor} onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+            <button style={{...buttonColor, borderRadius: '5px'}} onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
             <span> {count} </span>
-            <button style={buttonColor} onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+            <button style={{...buttonColor, borderRadius: '5px'}} onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
             <br />
             <br />
             <button onClick={() => setCount(0)}>Reset Count</ button>
